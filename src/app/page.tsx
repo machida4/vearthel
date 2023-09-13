@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import Link from 'next/link';
 import { buildClient } from './lib/api';
 import { TypeBlogSkeleton } from './lib/contentful';
-import styles from './page.module.css';
+import styles from './page.module.scss';
 
 const client = buildClient();
 
@@ -15,9 +15,13 @@ const Home: NextPage = async () => {
     <div>
       <main className={styles.main}>
         <div className="content">
-          <Link href={`/blogs/${items[0].fields.slug}`}>
-            {items[0].fields.title}
-          </Link>
+          {items.map((item) => (
+            <div key={item.fields.slug}>
+              <Link href={`/blog/${item.fields.slug}`}>
+                {item.fields.title}
+              </Link>
+            </div>
+          ))}
         </div>
       </main>
     </div>

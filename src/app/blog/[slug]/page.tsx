@@ -1,26 +1,20 @@
-import { buildClient, getAllBlogs, getBlog } from '@/app/lib/api';
+import { getAllBlogs, getBlog } from '@/app/lib/api';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { NextPage } from 'next';
 
 export const dynamicParams = false;
 
-const client = buildClient();
-
-export async function generateStaticParams() {
+export const generateStaticParams = async () => {
   const allBlogs = await getAllBlogs();
 
   return allBlogs.map((blog) => ({
     slug: blog.fields.slug,
   }));
-}
-
-type Props = {
-  params: {
-    slug: string;
-  };
 };
 
-const BlogPage: NextPage<Props> = async ({ params }) => {
+type Props = { params: { slug: string } };
+
+export const BlogPage: NextPage<Props> = async ({ params }) => {
   const blog = await getBlog(params.slug);
 
   return (

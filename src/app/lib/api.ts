@@ -8,10 +8,6 @@ export const buildClient = () => {
   })
 }
 
-const extractPostEntries = (fetchResponse: any): any[] => {
-  return fetchResponse?.data?.postCollection?.items
-}
-
 export const getAllBlogs = async () => {
   const client = buildClient();
   const { items } = await client.getEntries<TypeBlogSkeleton>({
