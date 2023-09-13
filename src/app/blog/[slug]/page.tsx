@@ -14,7 +14,7 @@ export const generateStaticParams = async () => {
 
 type Props = { params: { slug: string } };
 
-export const BlogPage: NextPage<Props> = async ({ params }) => {
+export const BlogEntryPage: NextPage<Props> = async ({ params }) => {
   const blog = await getBlog(params.slug);
 
   return (
@@ -27,4 +27,4 @@ export const BlogPage: NextPage<Props> = async ({ params }) => {
   );
 };
 
-export default BlogPage;
+export default BlogEntryPage;
