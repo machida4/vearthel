@@ -1,6 +1,6 @@
 'use client';
 
-import { BaseStyles, SSRProvider, ThemeProvider } from '@primer/react';
+import { BaseStyles, ThemeProvider } from '@primer/react';
 
 import { useServerInsertedHTML } from 'next/navigation';
 import React, { useState } from 'react';
@@ -34,13 +34,11 @@ export function StyledComponentsRegistry({
 
 const AppThemeProvider = ({ children }: { children: React.ReactNode }) => {
   return (
-    <SSRProvider>
-      <StyledComponentsRegistry>
-        <ThemeProvider colorMode="auto" preventSSRMismatch>
-          <BaseStyles>{children}</BaseStyles>
-        </ThemeProvider>
-      </StyledComponentsRegistry>
-    </SSRProvider>
+    <StyledComponentsRegistry>
+      <ThemeProvider colorMode="auto" preventSSRMismatch>
+        <BaseStyles>{children}</BaseStyles>
+      </ThemeProvider>
+    </StyledComponentsRegistry>
   );
 };
 

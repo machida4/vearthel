@@ -7,7 +7,7 @@ import React from 'react';
 
 const Navbar: React.FC = () => {
   return (
-    <Header sx={{ gap: '8px' }}>
+    <Header>
       <Header.Item>
         <Header.Link href="/">
           <Image
