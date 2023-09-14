@@ -19,7 +19,11 @@ export default function RootLayout({
     <html lang="ja">
       <body className={inter.className}>
         <Navbar />
-        <main className="text-lg">{children}</main>
+        <main className="flex-grow">
+          <div className="mx-auto px-4 py-12 sm:px-6 lg:px-8 max-w-4xl">
+            {children}
+          </div>
+        </main>
       </body>
     </html>
   );
