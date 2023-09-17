@@ -1,3 +1,5 @@
+import { author } from '../lib/constants';
+
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
@@ -5,7 +7,9 @@ const Footer: React.FC = () => {
     <footer>
       <div className="ms-auto">
         <p className="text-center">
-          <small>© {currentYear} Machida EARTH. All rights reserved.</small>
+          <small>
+            © {currentYear} {author}. All rights reserved.
+          </small>
         </p>
       </div>
     </footer>
