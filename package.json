@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.17.2",
+    "@react-three/drei": "^9.83.9",
     "@react-three/fiber": "^8.14.2",
     "@types/node": "20.6.0",
     "@types/react": "18.2.21",
