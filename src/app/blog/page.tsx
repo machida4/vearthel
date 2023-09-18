@@ -11,12 +11,17 @@ const BlogPage: NextPage = async () => {
   });
 
   return (
-    <div className="content">
-      {items.map((item) => (
-        <div key={item.fields.slug}>
-          <Link href={`/blog/${item.fields.slug}`}>{item.fields.title}</Link>
-        </div>
-      ))}
+    <div>
+      <h1>Blog</h1>
+      <ul>
+        {items.map((item) => (
+          <li key={item.fields.slug}>
+            <Link href={`/blog/${item.fields.slug}`}>
+              <h2>{item.fields.title}</h2>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
