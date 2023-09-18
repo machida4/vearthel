@@ -14,7 +14,7 @@ export const generateStaticParams = async () => {
 
 type Props = { params: { slug: string } };
 
-export const BlogEntryPage: NextPage<Props> = async ({ params }) => {
+const BlogEntryPage: NextPage<Props> = async ({ params }) => {
   const blog = await getBlog(params.slug);
   const formattedDate = new Date(blog.sys.createdAt).toLocaleDateString(
     'en-US',
