@@ -3,7 +3,9 @@ import { NextPage } from 'next';
 const AboutPage: NextPage = async () => {
   return (
     <div>
-      <h1>About</h1>
+      <div className="mb-12">
+        <h1>About</h1>
+      </div>
       <p>Machida4</p>
       <h2>Accounts</h2>
       <h2>Skills</h2>
