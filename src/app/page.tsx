@@ -25,10 +25,15 @@ const Scene: React.FC = () => {
 
 const Home: NextPage = () => {
   return (
-    <>
-      <div>Hello, World!</div>
+    <div>
       <Scene />
-    </>
+      <div className="text-center text-6xl font-bold mb-3">
+        <p>Hello, Earth!</p>
+      </div>
+      <div className="text-center text-2xl">
+        <p>machida.earth</p>
+      </div>
+    </div>
   );
 };
 

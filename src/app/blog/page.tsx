@@ -10,7 +10,7 @@ const BlogPage: NextPage = async () => {
 
   return (
     <div>
-      <div className="mb-12">
+      <div className="mb-8">
         <h1>Blog</h1>
       </div>
 
