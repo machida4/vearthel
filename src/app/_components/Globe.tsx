@@ -2,7 +2,6 @@
 
 import { useCursor } from '@react-three/drei';
 import { useFrame, useLoader } from '@react-three/fiber';
-import { useRouter } from 'next/navigation';
 import { useRef, useState } from 'react';
 import { Mesh, TextureLoader } from 'three';
 
@@ -12,7 +11,7 @@ type Props = {
 
 const Globe: React.FC<Props> = ({ route }) => {
   const meshRef = useRef<Mesh>(null!);
-  const router = useRouter();
+  // const router = useRouter();
 
   const [hovered, hover] = useState(false);
   const globeMap = useLoader(TextureLoader, 'icon.png');
@@ -23,11 +22,11 @@ const Globe: React.FC<Props> = ({ route }) => {
   return (
     <mesh
       ref={meshRef}
-      onClick={() => router.push(route)}
+      // onClick={() => router.push(route)}
       onPointerOver={() => hover(true)}
       onPointerOut={() => hover(false)}
     >
-      <sphereGeometry args={[1, 64, 64]} />
+      <sphereGeometry args={[3, 64, 64]} />
       <meshStandardMaterial map={globeMap} />
     </mesh>
   );
